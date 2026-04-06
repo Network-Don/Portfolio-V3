@@ -68,7 +68,7 @@
 }
 
 .navbar.scrolled {
-    background: rgba(10, 14, 23, 0.9);
+    background: var(--bg-tertiary);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     padding: var(--space-2) 0;
@@ -132,7 +132,10 @@
 
 /* Cards */
 .card {
-    background: rgba(17, 24, 39, 0.4);
+    --text-primary: var(--card-text-primary);
+    --text-secondary: var(--card-text-secondary);
+    background: var(--card-bg);
+    color: var(--text-primary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-xl);
     padding: var(--space-8);

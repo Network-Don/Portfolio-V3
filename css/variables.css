@@ -18,6 +18,11 @@
     --gradient-accent: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     --gradient-bg: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
 
+    /* Cards */
+    --card-bg: #ffffff;
+    --card-text-primary: #1a1a1a;
+    --card-text-secondary: #4a4a4a;
+
     /* Typography */
     --font-main: 'Plus Jakarta Sans', sans-serif;
     --font-mono: 'Space Mono', monospace;
@@ -73,7 +78,9 @@
     --accent-glow: rgba(59, 130, 246, 0.5);
     
     --border-color: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(59, 130, 246, 0.3);
-
     --gradient-bg: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+
+    --card-bg: rgba(17, 24, 39, 0.4);
+    --card-text-primary: #ffffff;
+    --card-text-secondary: #cbd5e1;
 }
