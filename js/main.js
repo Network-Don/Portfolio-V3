@@ -41,8 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: Stop observing once revealed if you only want it to animate once
-                // observer.unobserve(entry.target);
+            } else {
+                // Reset state when element leaves the viewport so it can re-trigger
+                entry.target.classList.remove('active');
             }
         });
     }, {
