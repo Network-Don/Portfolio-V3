@@ -1,22 +1,22 @@
 :root {
-    /* Color Palette - Dark Theme with Cyan/Blue Accent */
-    --bg-main: #0a0e17; /* Deep dark blue */
-    --bg-secondary: #111827; /* Slightly lighter */
-    --bg-tertiary: rgba(17, 24, 39, 0.7); /* For glassmorphism */
+    /* Color Palette - Cream Base Theme */
+    --bg-main: #fdfbf7; /* Milk white / Cream */
+    --bg-secondary: #f4f0e6; /* Slightly darker cream */
+    --bg-tertiary: rgba(253, 251, 247, 0.8); /* For glassmorphism */
     
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
     
-    --accent-primary: #3b82f6; /* Cyber blue */
-    --accent-secondary: #06b6d4; /* Cyan */
-    --accent-glow: rgba(59, 130, 246, 0.5);
+    --accent-primary: #2563eb; /* Deep blue that looks great on cream */
+    --accent-secondary: #0284c7;  
+    --accent-glow: rgba(37, 99, 235, 0.3);
     
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(59, 130, 246, 0.3);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(37, 99, 235, 0.4);
 
     /* Gradients */
     --gradient-accent: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    --gradient-bg: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+    --gradient-bg: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
 
     /* Typography */
     --font-main: 'Plus Jakarta Sans', sans-serif;
@@ -55,19 +55,25 @@
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
-    --z-modal: 1000;
+    --z-sticky: 1000;
+    --z-modal: 2000;
 }
 
-[data-theme="light"] {
-    --bg-main: #f9fafb;
-    --bg-secondary: #f3f4f6;
-    --bg-tertiary: rgba(255, 255, 255, 0.7);
+[data-theme="dark"] {
+    /* Color Palette - Dark Theme with Cyan/Blue Accent */
+    --bg-main: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-tertiary: rgba(17, 24, 39, 0.7);
     
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
-    
-    --border-color: rgba(0, 0, 0, 0.1);
-    --border-hover: rgba(59, 130, 246, 0.4);
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
 
-    --gradient-bg: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+    --accent-primary: #3b82f6;
+    --accent-secondary: #06b6d4;
+    --accent-glow: rgba(59, 130, 246, 0.5);
+    
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(59, 130, 246, 0.3);
+
+    --gradient-bg: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
 }
