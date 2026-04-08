@@ -1,3 +1,9 @@
+// Force scroll to top on page refresh/load
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Navigation Toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
