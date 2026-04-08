@@ -3,24 +3,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
     const icon = mobileToggle.querySelector('i');
+    const navOverlay = document.querySelector('.nav-overlay');
 
-    mobileToggle.addEventListener('click', () => {
+    function toggleNav() {
         navLinks.classList.toggle('nav-active');
+        if (navOverlay) navOverlay.classList.toggle('active');
+
         if (navLinks.classList.contains('nav-active')) {
             icon.classList.remove('bx-menu');
             icon.classList.add('bx-x');
+            document.body.style.overflow = 'hidden';
         } else {
             icon.classList.remove('bx-x');
             icon.classList.add('bx-menu');
+            document.body.style.overflow = '';
         }
-    });
+    }
+
+    mobileToggle.addEventListener('click', toggleNav);
+    if (navOverlay) navOverlay.addEventListener('click', toggleNav);
 
     // Close menu when clicking a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('nav-active');
-            icon.classList.remove('bx-x');
-            icon.classList.add('bx-menu');
+            if (navLinks.classList.contains('nav-active')) {
+                toggleNav();
+            }
         });
     });
 
