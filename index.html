@@ -363,6 +363,381 @@
                 flex-direction: column;
             }
         }
+
+        /* ── VLAN Project Card Components ─────────────────────────── */
+
+        /* Category tag pills above the project title */
+        .project-category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-bottom: var(--space-2);
+        }
+
+        .project-category-tag {
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            background: var(--gradient-accent);
+            color: #fff;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        /* Short summary paragraph under the title */
+        .project-summary {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.75;
+            max-width: 900px;
+            margin-bottom: var(--space-6);
+        }
+
+        /* Architecture diagram */
+        .project-diagram-wrapper {
+            margin: var(--space-6) 0 var(--space-8);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            transition: border-color var(--transition-normal);
+        }
+
+        .project-diagram-wrapper:hover {
+            border-color: var(--border-hover);
+        }
+
+        .project-diagram-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-diagram-caption {
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-diagram-caption i {
+            color: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        /* Section headings within the project card */
+        .project-section-heading {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--accent-primary);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-section-heading i {
+            font-size: var(--text-xl);
+        }
+
+        /* Numbered approach list */
+        .project-approach-list {
+            counter-reset: approach-counter;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .project-approach-list li {
+            counter-increment: approach-counter;
+            display: flex;
+            gap: var(--space-4);
+            align-items: flex-start;
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .project-approach-list li::before {
+            content: counter(approach-counter, decimal-leading-zero);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2rem;
+            height: 2rem;
+            background: var(--gradient-accent);
+            color: #fff;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        /* Challenges 2-column grid */
+        .project-challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+
+        .challenge-item {
+            display: flex;
+            gap: var(--space-4);
+            align-items: flex-start;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            transition: border-color var(--transition-fast);
+        }
+
+        .challenge-item:hover {
+            border-color: var(--border-hover);
+        }
+
+        .challenge-icon {
+            flex-shrink: 0;
+            width: 2.25rem;
+            height: 2.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-accent);
+            border-radius: var(--radius-md);
+            color: #fff;
+            font-size: var(--text-lg);
+        }
+
+        /* Outcomes bullet list */
+        .project-outcomes-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+            gap: var(--space-3);
+        }
+
+        .project-outcomes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-outcomes-list li i {
+            color: var(--accent-primary);
+            font-size: var(--text-lg);
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        /* VLSM Table */
+        .vlsm-table-wrapper {
+            overflow-x: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            margin-bottom: var(--space-2);
+        }
+
+        .vlsm-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--text-sm);
+            min-width: 560px;
+        }
+
+        .vlsm-table thead {
+            background: var(--gradient-accent);
+        }
+
+        .vlsm-table thead th {
+            padding: var(--space-3) var(--space-4);
+            text-align: left;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .vlsm-table tbody tr {
+            border-bottom: 1px solid var(--border-color);
+            transition: background var(--transition-fast);
+        }
+
+        .vlsm-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .vlsm-table tbody tr:hover {
+            background: var(--bg-secondary);
+        }
+
+        .vlsm-table tbody td {
+            padding: var(--space-3) var(--space-4);
+            color: var(--text-secondary);
+            vertical-align: middle;
+        }
+
+        .vlsm-table tbody td:first-child {
+            width: 60px;
+        }
+
+        .vlan-id {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.5rem;
+            padding: 0.15rem 0.5rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .vlsm-table code {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            padding: 0.1rem 0.35rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .vlsm-table-caption {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: var(--space-2);
+            margin-bottom: var(--space-6);
+            line-height: 1.5;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 640px) {
+            .project-challenges-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-outcomes-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ── Read More / Expandable Panel ──────────────────────────── */
+
+        .project-read-more-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            margin: var(--space-6) auto 0;
+            padding: var(--space-3) var(--space-8);
+            background: transparent;
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            border-radius: var(--radius-full);
+            font-family: var(--font-main);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .project-read-more-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            z-index: -1;
+        }
+
+        .project-read-more-btn:hover {
+            color: #fff;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--accent-glow);
+        }
+
+        .project-read-more-btn:hover::before {
+            opacity: 1;
+        }
+
+        .project-read-more-btn .read-more-icon {
+            font-size: var(--text-lg);
+            transition: transform var(--transition-normal);
+        }
+
+        .project-read-more-btn[aria-expanded="true"] .read-more-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Collapsible panel — height animation via max-height */
+        .project-expandable {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .project-expandable.is-open {
+            max-height: 9999px;
+            opacity: 1;
+        }
+
+        .project-expandable-inner {
+            padding-top: var(--space-6);
+        }
+
+        /* Show Less button — centered, slightly subdued */
+        .project-show-less-btn {
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-2);
+        }
+
+        /* Titled step sub-headings in the approach list */
+        .approach-step-title {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: var(--text-base);
+            margin-bottom: var(--space-2);
+        }
+
+        .project-approach-list li > div > p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -681,8 +1056,310 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="card reveal delay-200">
+                <!-- Project: Network Segmentation & VLAN Deployment -->
+                <div class="card reveal delay-200" id="project-vlan" style="grid-column: 1 / -1;">
+                    <div class="project-content">
+
+                        <!-- Project Header with Tags -->
+                        <div class="project-header-row">
+                            <div>
+                                <div class="project-category-tags">
+                                    <span class="project-category-tag">Network Security</span>
+                                    <span class="project-category-tag">Network Segmentation</span>
+                                    <span class="project-category-tag">Quality of Service</span>
+                                    <span class="project-category-tag">Compliance</span>
+                                    <span class="project-category-tag">Enterprise Networking</span>
+                                    <span class="project-category-tag">ROAS</span>
+                                </div>
+                                <h3 style="font-size: var(--text-3xl); margin-bottom: var(--space-4); margin-top: var(--space-4);">
+                                    Network Segmentation &amp; VLAN Deployment for a Regulated Microfinance Bank
+                                </h3>
+                                <p class="project-summary">
+                                    Redesigned the flat, unsegmented network of a CBN-regulated microfinance bank into 11 isolated VLANs with zone-based firewall policy, QoS-prioritized core banking traffic, and full inter-VLAN routing — closing a compliance gap ahead of a regulatory audit and hardening the network against lateral movement from a single compromised endpoint.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Network Architecture Diagram -->
+                        <div class="project-diagram-wrapper">
+                            <img
+                                src="MFB Network Architecture.png"
+                                alt="Network Architecture Diagram — 11-VLAN segmentation design for a CBN-regulated microfinance bank"
+                                class="project-diagram-img"
+                            />
+                            <p class="project-diagram-caption">
+                                <i class='bx bx-info-circle'></i>
+                                Network architecture diagram for the VLAN segmentation deployment. Device identifiers and production-specific labels have been sanitized.
+                            </p>
+                        </div>
+
+                        <!-- Read More Toggle Button -->
+                        <button class="project-read-more-btn" id="vlan-read-more-btn" aria-expanded="false" aria-controls="vlan-expandable">
+                            <span class="read-more-label">Read Full Case Study</span>
+                            <i class='bx bx-chevron-down read-more-icon'></i>
+                        </button>
+
+                        <!-- Expandable Detail Panel -->
+                        <div class="project-expandable" id="vlan-expandable" aria-hidden="true">
+                        <div class="project-expandable-inner">
+
+                        <div class="project-details" style="margin-bottom: var(--space-6);">
+
+                            <!-- Problem Statement -->
+                            <h4 class="project-section-heading">
+                                <i class='bx bx-error-circle'></i> Problem Statement
+                            </h4>
+                            <p style="margin-bottom: var(--space-4); color: var(--text-secondary); line-height: 1.8;">
+                                The client, a CBN-licensed microfinance bank, operated its head office and branch on a single flat network with no segmentation between departments, servers, or endpoints. As a regulated financial institution, this represented a direct compliance risk — CBN IT audits require demonstrable access segregation between sensitive functions, and failure to remediate this class of finding can put an operating license at risk. It was also a serious security exposure: any single compromised device had unrestricted access to every server and administrative system on the network, and the client's endpoint protection platform was known to be unreliable, meaning network-level controls had to carry the primary security burden rather than act as a backup layer. Compounding this, there was no existing documentation of switch port assignments, department boundaries, or device inventory anywhere on the network.
+                            </p>
+
+                            <!-- My Approach -->
+                            <h4 class="project-section-heading">
+                                <i class='bx bx-list-ol'></i> My Approach
+                            </h4>
+                            <ol class="project-approach-list">
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Discovery &amp; Site Assessment</strong>
+                                        <p>Conducted a full physical and logical audit of the head office and branch: traced every switch port to its connected device, inventoried all network hardware (switches, firewall, servers, local office switches), documented existing (lack of) segmentation, and captured current DHCP configuration. Used a structured site assessment template to ensure nothing was missed, including physical security observations (unlocked server rooms, unlabelled cabling, default credentials).</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">VLAN &amp; IP Address Design</strong>
+                                        <p>Designed an 11-VLAN segmentation model aligned to departmental and functional boundaries, standardizing every VLAN to a /24 subnet for predictable, easy-to-document address boundaries and long-term growth headroom.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Firewall-First Configuration Sequence</strong>
+                                        <p>Configured VLAN sub-interfaces, DHCP scopes, and zone-based firewall rules on the perimeter firewall before touching the switch trunk configuration — a sequencing decision that proved critical during rollout. Grouped VLANs into security zones (Management, Restricted, Internal, Branch) so firewall policy could be written and audited at the zone level rather than per-VLAN, improving both manageability and auditability.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Switch Configuration &amp; Port Mapping</strong>
+                                        <p>Physically traced and mapped every port on the core switch and on the small local switches serving each office to its connected endpoint, since no prior port documentation existed. Configured VLANs, trunk ports, and access ports on the core managed switch, migrating departments one VLAN at a time with connectivity verification after each migration rather than a single bulk cutover — minimizing blast radius if a misconfiguration occurred. Assigned the core switch a dedicated management IP on a restricted management VLAN, accessible only from the IT segment, to support ongoing administration without exposing the switch's web interface to the wider network.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Radio Link Extension</strong>
+                                        <p>Verified the inter-site radio link was operating in Layer 2 bridge mode (a prerequisite for 802.1Q VLAN tags to traverse it) and confirmed MTU support for tagged frames before extending the branch VLAN across it. Configured the branch switch as a mirror of the relevant HQ trunk configuration, restricted to the single VLAN required for that site.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Inter-VLAN Routing (ROAS) for Shared Resources</strong>
+                                        <p>Beyond basic zone isolation, configured specific inter-VLAN routing rules on the firewall to permit controlled access to shared resources — such as network printers not present in every office — so departments without a local printer could still reach one on another VLAN, without opening broader lateral access between those segments.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Server Addressing &amp; Reachability</strong>
+                                        <p>Assigned static IP addresses to all core infrastructure servers — file server, application server, and database server — replacing ad hoc or DHCP-assigned addressing. This ensured consistent reachability for firewall rules, DNS records, and application configuration, and eliminated the risk of a server's IP changing on lease renewal and breaking dependent services.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Quality of Service (QoS)</strong>
+                                        <p>Implemented QoS policy on the firewall to prioritise and guarantee bandwidth for core banking application and website traffic over general internet browsing and best-effort traffic, ensuring transaction-critical systems remained responsive even under network load — particularly important on the bandwidth-constrained radio link to the branch.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Lateral &amp; Vertical Movement Hardening</strong>
+                                        <p>Given the client's unreliable endpoint protection, implemented compensating network-layer controls: switch port isolation to prevent intra-VLAN (horizontal) movement between devices in the same department, explicit zone-to-zone deny rules on the firewall to prevent cross-VLAN (vertical) movement, and native VLAN hardening to prevent VLAN-hopping attacks.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <strong class="approach-step-title">Testing, Documentation &amp; Handover</strong>
+                                        <p>Validated every VLAN independently (gateway reachability, correct DHCP assignment, server access per policy, cross-VLAN isolation, shared printer access) before sign-off. Delivered full documentation: IP addressing plans, switch port maps, firewall rule sets, and server/device static IP registers — structured for direct use in a CBN compliance audit.</p>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <!-- Challenges & Solutions -->
+                            <h4 class="project-section-heading">
+                                <i class='bx bx-wrench'></i> Challenges &amp; Solutions
+                            </h4>
+                            <div class="project-challenges-grid">
+                                <div class="challenge-item">
+                                    <div class="challenge-icon"><i class='bx bx-bolt-circle'></i></div>
+                                    <div>
+                                        <strong style="color: var(--text-primary); display: block; margin-bottom: var(--space-2);">Trunk-Before-Firewall Outage</strong>
+                                        <p style="font-size: var(--text-sm); color: var(--text-secondary); margin: 0;">An early misstep configuring the switch trunk before the firewall was ready caused a temporary loss of connectivity for several departments — resolved by rolling back and re-sequencing the entire deployment to firewall-first.</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <div class="challenge-icon"><i class='bx bx-search-alt'></i></div>
+                                    <div>
+                                        <strong style="color: var(--text-primary); display: block; margin-bottom: var(--space-2);">Zero Pre-Existing Documentation</strong>
+                                        <p style="font-size: var(--text-sm); color: var(--text-secondary); margin: 0;">Neither the core switch nor the small local switches in each office had any existing port documentation — every port had to be physically traced and mapped to its connected endpoint before VLAN assignment could begin.</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <div class="challenge-icon"><i class='bx bx-broadcast'></i></div>
+                                    <div>
+                                        <strong style="color: var(--text-primary); display: block; margin-bottom: var(--space-2);">Undocumented Radio Link Behaviour</strong>
+                                        <p style="font-size: var(--text-sm); color: var(--text-secondary); margin: 0;">The inter-site radio link's Layer 2/Layer 3 behaviour was undocumented and had to be verified directly with the vendor before branch segmentation could safely proceed.</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <div class="challenge-icon"><i class='bx bx-printer'></i></div>
+                                    <div>
+                                        <strong style="color: var(--text-primary); display: block; margin-bottom: var(--space-2);">VLAN Isolation vs. Shared Printers</strong>
+                                        <p style="font-size: var(--text-sm); color: var(--text-secondary); margin: 0;">Strict VLAN isolation would have blocked departments without their own printer from reaching one in another office — required deliberately scoped inter-VLAN routing rules narrow enough to avoid reopening lateral movement risk, but permissive enough to preserve day-to-day workflows.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Outcomes -->
+                            <h4 class="project-section-heading">
+                                <i class='bx bx-check-shield'></i> Outcomes
+                            </h4>
+                            <ul class="project-outcomes-list">
+                                <li><i class='bx bxs-check-circle'></i> Flat network converted into 11 isolated, access-controlled VLANs</li>
+                                <li><i class='bx bxs-check-circle'></i> Branch office fully segmented across the radio link with zero access to HQ staff segments</li>
+                                <li><i class='bx bxs-check-circle'></i> Core banking application and website traffic prioritized via QoS for consistent performance under load</li>
+                                <li><i class='bx bxs-check-circle'></i> File, application, and database servers moved to static addressing for reliable reachability</li>
+                                <li><i class='bx bxs-check-circle'></i> Core switch secured with a dedicated, access-restricted management IP</li>
+                                <li><i class='bx bxs-check-circle'></i> Shared resources like printers remained accessible across departments through deliberately scoped routing rules</li>
+                                <li><i class='bx bxs-check-circle'></i> Network hardened against lateral and vertical compromise spread, compensating for unreliable endpoint protection</li>
+                                <li><i class='bx bxs-check-circle'></i> Full audit-ready documentation delivered ahead of the client's next regulatory examination</li>
+                            </ul>
+
+                            <!-- VLSM Subnet Design Table -->
+                            <h4 class="project-section-heading">
+                                <i class='bx bx-table'></i> IP Addressing Design
+                            </h4>
+                            <div class="vlsm-table-wrapper">
+                                <table class="vlsm-table" aria-label="IP Addressing Design Table">
+                                    <thead>
+                                        <tr>
+                                            <th>VLAN</th>
+                                            <th>Department</th>
+                                            <th>Prefix</th>
+                                            <th>Subnet</th>
+                                            <th>Gateway</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="vlan-id">10</span></td>
+                                            <td>IT</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.10.0</code></td>
+                                            <td><code>192.168.10.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">20</span></td>
+                                            <td>IT Support</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.20.0</code></td>
+                                            <td><code>192.168.20.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">30</span></td>
+                                            <td>Audit &amp; Control</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.30.0</code></td>
+                                            <td><code>192.168.30.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">40</span></td>
+                                            <td>Legal</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.40.0</code></td>
+                                            <td><code>192.168.40.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">50</span></td>
+                                            <td>Operations</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.50.0</code></td>
+                                            <td><code>192.168.50.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">60</span></td>
+                                            <td>HR &amp; Admin</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.60.0</code></td>
+                                            <td><code>192.168.60.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">70</span></td>
+                                            <td>Branch Office</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.70.0</code></td>
+                                            <td><code>192.168.70.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">80</span></td>
+                                            <td>Risk Management</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.80.0</code></td>
+                                            <td><code>192.168.80.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">90</span></td>
+                                            <td>Finance &amp; Strategy</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.90.0</code></td>
+                                            <td><code>192.168.90.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">100</span></td>
+                                            <td>Marketing</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.100.0</code></td>
+                                            <td><code>192.168.100.1</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="vlan-id">110</span></td>
+                                            <td>Executive</td>
+                                            <td><code>/24</code></td>
+                                            <td><code>192.168.110.0</code></td>
+                                            <td><code>192.168.110.1</code></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="vlsm-table-caption">
+                                Illustrative example of the addressing design — private (RFC&nbsp;1918) ranges shown are representative, not the client's literal production values.
+                            </p>
+
+                        </div>
+
+                        <!-- Show Less button at bottom of expanded panel -->
+                        <button class="project-read-more-btn project-show-less-btn" id="vlan-show-less-btn" aria-controls="vlan-expandable">
+                            <span>Show Less</span>
+                            <i class='bx bx-chevron-up'></i>
+                        </button>
+
+                        </div>
+                        </div>
+
+                        <!-- Tech Stack -->
+                        <div class="project-tech">
+                            <span class="badge">Cisco SG200-50 Managed Switch</span>
+                            <span class="badge">Sophos Firewall</span>
+                            <span class="badge">Zone-Based Policy</span>
+                            <span class="badge">VLAN Sub-interfaces</span>
+                            <span class="badge">QoS</span>
+                            <span class="badge">VLSM Subnetting</span>
+                            <span class="badge">802.1Q VLAN Tagging</span>
+                            <span class="badge">Static IP Addressing</span>
+                            <span class="badge">DHCP</span>
+                            <span class="badge">P2P Radio Link (L2 Bridging)</span>
+                            <span class="badge">Inter-VLAN Routing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (now 3) -->
+                <div class="card reveal delay-300">
                     <div class="project-content">
                         <h3>Unified Threat Management Migration</h3>
                         <div class="project-details">
@@ -702,8 +1379,8 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="card reveal delay-300">
+                <!-- Project 3 (now 4) -->
+                <div class="card reveal delay-400">
                     <div class="project-content">
                         <h3>Data Loss Prevention (DLP) Initiative</h3>
                         <div class="project-details">
@@ -722,8 +1399,8 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="card reveal delay-400">
+                <!-- Project 4 (now 5) -->
+                <div class="card reveal delay-500">
                     <div class="project-content">
                         <h3>Enterprise Network Security & Sophos Firewall Deployment</h3>
                         <div class="project-details">
@@ -921,6 +1598,44 @@
     <script src="js/main.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Read More / Show Less toggle for the VLAN project card
+        (function () {
+            var btn      = document.getElementById('vlan-read-more-btn');
+            var lessBtn  = document.getElementById('vlan-show-less-btn');
+            var panel    = document.getElementById('vlan-expandable');
+            if (!btn || !panel) return;
+
+            function openPanel() {
+                panel.classList.add('is-open');
+                panel.setAttribute('aria-hidden', 'false');
+                btn.setAttribute('aria-expanded', 'true');
+                var label = btn.querySelector('.read-more-label');
+                if (label) label.textContent = 'Show Less';
+            }
+
+            function closePanel() {
+                panel.classList.remove('is-open');
+                panel.setAttribute('aria-hidden', 'true');
+                btn.setAttribute('aria-expanded', 'false');
+                var label = btn.querySelector('.read-more-label');
+                if (label) label.textContent = 'Read Full Case Study';
+                // Scroll top-read-more-btn back into view smoothly
+                btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            btn.addEventListener('click', function () {
+                if (panel.classList.contains('is-open')) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            });
+
+            if (lessBtn) {
+                lessBtn.addEventListener('click', closePanel);
+            }
+        })();
     </script>
 </body>
 
